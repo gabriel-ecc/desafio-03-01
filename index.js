@@ -1,6 +1,7 @@
 const precio = 400000
 let contador = 0;
 let totalPago = 0;
+let minimo = 0;
 
 precioSpan = document.querySelector(".precio-inicial");
 precioSpan.innerHTML = precio
