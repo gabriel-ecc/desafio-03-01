@@ -1,7 +1,6 @@
 const precio = 400000
 let contador = 0;
 let totalPago = 0;
-let minimo = 0;
 
 precioSpan = document.querySelector(".precio-inicial");
 precioSpan.innerHTML = precio
@@ -19,12 +18,17 @@ function sumar() {
 }
 
 function restar() {
-    contador = contador - 1;
-    totalPago = contador * precio;
-    let selectorCantidad = document.getElementById('cantidad');
-    selectorCantidad.innerHTML = contador;
-    let selectorTotal = document.getElementById('valor-total');
-    selectorTotal.innerHTML = totalPago;
+  if (contador > 0) {
+      contador = contador - 1;
+      totalPago = contador * precio;
+      let selectorCantidad = document.getElementById('cantidad');
+      selectorCantidad.innerHTML = contador;
+      let selectorTotal = document.getElementById('valor-total');
+      selectorTotal.innerHTML = totalPago;
+  }
+  else {
+    alert("No puedes restar más.");
+  }
 }
 
 botonSumar.addEventListener('click', sumar);
