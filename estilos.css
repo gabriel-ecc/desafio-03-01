@@ -71,7 +71,8 @@ body {
     color: red;
     font-weight: bolder;
     height: 1rem;
-    
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .desvanecer{
