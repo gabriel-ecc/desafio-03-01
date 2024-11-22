@@ -84,9 +84,9 @@ body {
 
 @keyframes desvanecer {
     0% {
-      opacity: 1; /* El texto comienza completamente visible */
+      opacity: 1;
     }
     100% {
-      opacity: 0; /* El texto termina completamente invisible */
+      opacity: 0;
     }
   }

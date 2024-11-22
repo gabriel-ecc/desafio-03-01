@@ -9,26 +9,28 @@ let mostrarError = document.getElementById('texto-error');
 let selectorCantidad = document.getElementById('cantidad');
 let selectorTotal = document.getElementById('valor-total');
 
-document.getElementById('btn-sumar').addEventListener('click', ()=>{
-  contador = contador + 1;
-  totalPago = contador * precio;
-  selectorCantidad.innerHTML = contador;
-  selectorTotal.innerHTML = totalPago.toLocaleString('es-ES');
+function quitarMensajeError(){
   mostrarError.innerHTML = ""
   mostrarError.classList.remove("desvanecer");
+}
+
+document.getElementById('btn-sumar').addEventListener('click', ()=>{
+  quitarMensajeError();
+  contador += 1;
+  selectorCantidad.innerHTML = contador;
+  selectorTotal.innerHTML = (contador * precio).toLocaleString('es-ES');
 });
 
 document.getElementById('btn-restar').addEventListener('click', ()=>{
-  mostrarError.classList.remove("desvanecer");
-  mostrarError.innerHTML = ""
   if (contador > 0){
-    contador = contador - 1;
-    totalPago = contador * precio;
+    contador -= 1;
     selectorCantidad.innerHTML = contador;
-    selectorTotal.innerHTML = totalPago.toLocaleString('es-ES');
+    selectorTotal.innerHTML = (contador * precio).toLocaleString('es-ES');
   }
   else {
     mostrarError.innerHTML = "Sin elementos"
     mostrarError.classList.add("desvanecer");
   }
 });
+
+
