@@ -7,6 +7,7 @@ precioSpan.innerHTML = precio
 
 let botonSumar = document.getElementById('btn-sumar');
 let botonRestar = document.getElementById('btn-restar');
+let mostrarError = document.getElementById('texto-error');
 
 function sumar() {
   contador = contador + 1;
@@ -15,9 +16,13 @@ function sumar() {
   selectorCantidad.innerHTML = contador;
   let selectorTotal = document.getElementById('valor-total');
   selectorTotal.innerHTML = totalPago;
+  mostrarError.innerHTML = ""
+  mostrarError.classList.remove("desvanecer");
 }
 
 function restar(){
+  mostrarError.classList.remove("desvanecer");
+  mostrarError.innerHTML = ""
   if (contador > 0){
     contador = contador -1;
     totalPago = contador * precio;
@@ -26,15 +31,11 @@ function restar(){
     let selectorTotal = document.getElementById('valor-total');
     selectorTotal.innerHTML = totalPago;
   }
-
   else {
-    alert("No puedes restar mas.")
+    mostrarError.innerHTML = "Sin elementos"
+    mostrarError.classList.add("desvanecer");
   }
 }
-
-
-
-
 
 botonSumar.addEventListener('click', sumar);
 botonRestar.addEventListener('click', restar);

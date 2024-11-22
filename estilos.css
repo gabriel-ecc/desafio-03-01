@@ -66,3 +66,26 @@ body {
     border-radius: 50%;
     border: solid 1px;
 }
+
+.texto-error{
+    color: red;
+    font-weight: bolder;
+    height: 1rem;
+    
+}
+
+.desvanecer{
+    animation-name: desvanecer;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes desvanecer {
+    0% {
+      opacity: 1; /* El texto comienza completamente visible */
+    }
+    100% {
+      opacity: 0; /* El texto termina completamente invisible */
+    }
+  }
